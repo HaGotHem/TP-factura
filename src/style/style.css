@@ -1,6 +1,7 @@
 @import "tailwindcss";
+@plugin "daisyui";
 
 @font-face {
-    font-family: inter;
-    src: url("../assets/fonts/inter-font.ttf");
+  font-family: inter;
+  src: url("../assets/fonts/inter-font.ttf");
 }
