@@ -4,414 +4,243 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/src/style/style.css" />
-    <title>Factura - Tableau de bord</title>
+    <title>Factura — Tableau de bord</title>
   </head>
-  <body class="font-[inter] bg-gray-50 text-gray-900">
-    <div class="flex h-screen">
-      <!-- Sidebar -->
-      <aside
-        class="w-64 bg-[#0f172a] text-white flex flex-col justify-between flex-shrink-0"
-      >
-        <div>
-          <!-- Logo -->
-          <div
-            class="px-6 py-5 border-b border-slate-700 flex items-center gap-2"
-          >
-            <div
-              class="w-8 h-8 bg-indigo-500 rounded-lg flex items-center justify-center text-sm font-bold"
-            >
-              F
-            </div>
-            <span class="text-lg font-semibold">Factura</span>
+  <body class="font-[inter] bg-gray-100 min-h-screen flex">
+
+    <!-- Sidebar -->
+    <aside id="sidebar" class="w-64 bg-gray-900 text-white min-h-screen flex flex-col justify-between fixed top-0 left-0 z-30 -translate-x-full lg:translate-x-0 transition-transform duration-300">
+
+      <!-- Logo -->
+      <div>
+        <div class="px-6 py-5 border-b border-gray-700 flex items-center gap-3">
+          <div class="w-8 h-8 bg-[#4f46e5] rounded-lg flex items-center justify-center text-sm font-bold text-white">
+            F
           </div>
-
-          <!-- Navigation -->
-          <nav class="px-3 py-4 space-y-6">
-            <!-- Active item -->
-            <div>
-              <a
-                href="#"
-                class="flex items-center gap-3 px-3 py-2 rounded-lg bg-slate-700 text-white text-sm font-medium"
-              >
-                <svg
-                  class="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1h-2z"
-                  />
-                </svg>
-                Tableau de bord
-              </a>
-            </div>
-
-            <!-- Clients -->
-            <div>
-              <p
-                class="px-3 mb-2 text-xs font-semibold text-slate-400 uppercase tracking-wider"
-              >
-                Clients
-              </p>
-              <div class="space-y-1">
-                <a
-                  href="#"
-                  class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-700 hover:text-white text-sm"
-                >
-                  <svg
-                    class="w-5 h-5"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m0 0a4 4 0 117.74 0M15 7a4 4 0 11-8 0 4 4 0 018 0z"
-                    />
-                  </svg>
-                  Liste des clients
-                </a>
-                <a
-                  href="#"
-                  class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-700 hover:text-white text-sm"
-                >
-                  <svg
-                    class="w-5 h-5"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M12 4v16m8-8H4" />
-                  </svg>
-                  Nouveau client
-                </a>
-              </div>
-            </div>
-
-            <!-- Factures -->
-            <div>
-              <p
-                class="px-3 mb-2 text-xs font-semibold text-slate-400 uppercase tracking-wider"
-              >
-                Factures
-              </p>
-              <div class="space-y-1">
-                <a
-                  href="#"
-                  class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-700 hover:text-white text-sm"
-                >
-                  <svg
-                    class="w-5 h-5"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                    />
-                  </svg>
-                  Liste des factures
-                </a>
-                <a
-                  href="#"
-                  class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-700 hover:text-white text-sm"
-                >
-                  <svg
-                    class="w-5 h-5"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M12 4v16m8-8H4" />
-                  </svg>
-                  Nouvelle facture
-                </a>
-              </div>
-            </div>
-
-            <!-- Devis -->
-            <div>
-              <p
-                class="px-3 mb-2 text-xs font-semibold text-slate-400 uppercase tracking-wider"
-              >
-                Devis
-              </p>
-              <div class="space-y-1">
-                <a
-                  href="#"
-                  class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-700 hover:text-white text-sm"
-                >
-                  <svg
-                    class="w-5 h-5"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-                    />
-                  </svg>
-                  Liste des devis
-                </a>
-                <a
-                  href="#"
-                  class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-700 hover:text-white text-sm"
-                >
-                  <svg
-                    class="w-5 h-5"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M12 4v16m8-8H4" />
-                  </svg>
-                  Nouveau devis
-                </a>
-              </div>
-            </div>
-          </nav>
+          <span class="text-lg font-semibold">Factura</span>
         </div>
 
-        <!-- User -->
-        <div class="px-3 py-4 border-t border-slate-700 space-y-2">
-          <a
-            href="#"
-            class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-700 hover:text-white text-sm"
-          >
-            <div
-              class="w-7 h-7 bg-indigo-500 rounded-full flex items-center justify-center text-xs font-bold"
-            >
-              A
-            </div>
-            Admin
-          </a>
-          <a
-            href="../../index.html*"
-            class="flex items-center gap-3 px-3 py-2 rounded-lg text-red-400 hover:bg-slate-700 hover:text-red-300 text-sm"
-          >
-            <svg
-              class="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a2 2 0 01-2 2H6a2 2 0 01-2-2V7a2 2 0 012-2h5a2 2 0 012 2v1"
-              />
+        <!-- Navigation -->
+        <nav class="px-3 py-4 flex flex-col gap-0.5">
+          <a href="#" class="flex items-center gap-3 px-3 py-2 rounded-lg bg-[#4f46e5] text-white text-sm font-medium">
+            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1h-2z" />
             </svg>
-            Déconnexion
+            Tableau de bord
           </a>
-        </div>
-      </aside>
 
-      <!-- Main content -->
-      <main class="flex-1 overflow-y-auto p-8">
-        <!-- Header -->
+          <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider px-3 pt-4 pb-1">Clients</p>
+          <a href="#" class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white text-sm transition-colors">
+            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m0 0a4 4 0 117.74 0M15 7a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+            Liste des clients
+          </a>
+          <a href="#" class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white text-sm transition-colors">
+            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M12 4v16m8-8H4" />
+            </svg>
+            Nouveau client
+          </a>
+
+          <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider px-3 pt-4 pb-1">Factures</p>
+          <a href="#" class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white text-sm transition-colors">
+            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            Liste des factures
+          </a>
+          <a href="#" class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white text-sm transition-colors">
+            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M12 4v16m8-8H4" />
+            </svg>
+            Nouvelle facture
+          </a>
+
+          <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider px-3 pt-4 pb-1">Devis</p>
+          <a href="#" class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white text-sm transition-colors">
+            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+            </svg>
+            Liste des devis
+          </a>
+          <a href="#" class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white text-sm transition-colors">
+            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M12 4v16m8-8H4" />
+            </svg>
+            Nouveau devis
+          </a>
+        </nav>
+      </div>
+
+      <!-- User footer -->
+      <div class="border-t border-gray-700 px-3 py-4 flex flex-col gap-0.5">
+        <a href="#" class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white text-sm transition-colors">
+          <div class="w-6 h-6 rounded-full bg-[#4f46e5] flex items-center justify-center shrink-0">
+            <span class="text-xs font-bold text-white">A</span>
+          </div>
+          Admin
+        </a>
+        <a href="../../index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg text-red-400 hover:bg-red-500/10 hover:text-red-300 text-sm transition-colors">
+          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a2 2 0 01-2 2H6a2 2 0 01-2-2V7a2 2 0 012-2h5a2 2 0 012 2v1" />
+          </svg>
+          Déconnexion
+        </a>
+      </div>
+    </aside>
+
+    <!-- Overlay mobile -->
+    <div id="overlay" class="fixed inset-0 bg-black/50 z-20 hidden lg:hidden" onclick="closeSidebar()"></div>
+
+    <!-- Main content -->
+    <div class="flex-1 flex flex-col lg:ml-64">
+
+      <!-- Navbar mobile -->
+      <header class="bg-white border-b border-gray-200 px-4 py-3 flex items-center gap-3 lg:hidden">
+        <button onclick="openSidebar()" class="p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+        <span class="text-lg font-semibold">Factura</span>
+      </header>
+
+      <!-- Page content -->
+      <main class="flex-1 p-6 lg:p-8">
+
+        <!-- Heading -->
         <div class="mb-8">
-          <h1 class="text-2xl font-bold">Tableau de bord</h1>
-          <p class="text-gray-500 text-sm mt-1">
-            Bienvenue sur votre espace de gestion
-          </p>
+          <h1 class="text-2xl font-bold text-gray-800">Tableau de bord</h1>
+          <p class="text-gray-500 text-sm mt-1">Bienvenue sur votre espace de gestion</p>
         </div>
 
-        <!-- Stat cards -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-          <!-- Clients -->
-          <div
-            class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex items-center justify-between"
-          >
+        <!-- Stats -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 mb-8">
+
+          <div class="bg-white rounded-xl border border-gray-200 shadow-sm p-5 flex items-center justify-between">
             <div>
               <p class="text-sm text-gray-500">Clients</p>
-              <p class="text-3xl font-bold mt-1">5</p>
+              <p class="text-3xl font-bold text-[#4f46e5] mt-1">5</p>
+              <p class="text-xs text-gray-400 mt-1">actifs</p>
             </div>
-            <div
-              class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center"
-            >
-              <svg
-                class="w-5 h-5 text-blue-600"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m0 0a4 4 0 117.74 0M15 7a4 4 0 11-8 0 4 4 0 018 0z"
-                />
+            <div class="w-12 h-12 rounded-xl bg-[#4f46e5]/10 flex items-center justify-center">
+              <svg class="w-6 h-6 text-[#4f46e5]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m0 0a4 4 0 117.74 0M15 7a4 4 0 11-8 0 4 4 0 018 0z" />
               </svg>
             </div>
           </div>
 
-          <!-- Factures -->
-          <div
-            class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex items-center justify-between"
-          >
+          <div class="bg-white rounded-xl border border-gray-200 shadow-sm p-5 flex items-center justify-between">
             <div>
               <p class="text-sm text-gray-500">Factures</p>
-              <p class="text-3xl font-bold mt-1">6</p>
+              <p class="text-3xl font-bold text-yellow-500 mt-1">6</p>
+              <p class="text-xs text-gray-400 mt-1">ce mois-ci</p>
             </div>
-            <div
-              class="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center"
-            >
-              <svg
-                class="w-5 h-5 text-orange-600"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                />
+            <div class="w-12 h-12 rounded-xl bg-yellow-50 flex items-center justify-center">
+              <svg class="w-6 h-6 text-yellow-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
               </svg>
             </div>
           </div>
 
-          <!-- Devis -->
-          <div
-            class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex items-center justify-between"
-          >
+          <div class="bg-white rounded-xl border border-gray-200 shadow-sm p-5 flex items-center justify-between">
             <div>
               <p class="text-sm text-gray-500">Devis</p>
-              <p class="text-3xl font-bold mt-1">4</p>
+              <p class="text-3xl font-bold text-green-500 mt-1">4</p>
+              <p class="text-xs text-gray-400 mt-1">en cours</p>
             </div>
-            <div
-              class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center"
-            >
-              <svg
-                class="w-5 h-5 text-green-600"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
-                />
+            <div class="w-12 h-12 rounded-xl bg-green-50 flex items-center justify-center">
+              <svg class="w-6 h-6 text-green-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
               </svg>
             </div>
           </div>
 
-          <!-- Chiffre d'affaires -->
-          <div
-            class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex items-center justify-between"
-          >
+          <div class="bg-white rounded-xl border border-gray-200 shadow-sm p-5 flex items-center justify-between">
             <div>
               <p class="text-sm text-gray-500">Chiffre d'affaires</p>
-              <p class="text-3xl font-bold mt-1">6 480,00 &euro;</p>
+              <p class="text-2xl font-bold text-gray-800 mt-1">6 480 €</p>
+              <p class="text-xs text-gray-400 mt-1">ce mois</p>
             </div>
-            <div
-              class="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center"
-            >
-              <svg
-                class="w-5 h-5 text-emerald-600"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                viewBox="0 0 24 24"
-              >
-                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            <div class="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center">
+              <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
           </div>
         </div>
 
-        <!-- Recent invoices -->
-        <div class="bg-white rounded-xl shadow-sm border border-gray-100">
-          <div
-            class="flex items-center justify-between px-6 py-4 border-b border-gray-100"
-          >
-            <h2 class="text-lg font-semibold">Dernières factures</h2>
-            <a
-              href="#"
-              class="text-sm text-indigo-600 hover:text-indigo-800 font-medium"
-              >Voir tout &rarr;</a
-            >
+        <!-- Dernières factures -->
+        <div class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <div class="flex items-center justify-between px-6 py-4 border-b border-gray-100">
+            <h2 class="text-base font-semibold text-gray-800">Dernières factures</h2>
+            <a href="#" class="text-sm text-[#4f46e5] hover:underline">Voir tout &rarr;</a>
           </div>
-          <table class="w-full">
-            <thead>
-              <tr
-                class="text-left text-xs font-semibold text-gray-400 uppercase tracking-wider"
-              >
-                <th class="px-6 py-3">N° Facture</th>
-                <th class="px-6 py-3">Client</th>
-                <th class="px-6 py-3">Montant TTC</th>
-                <th class="px-6 py-3">Date</th>
-                <th class="px-6 py-3">Statut</th>
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-gray-100">
-              <tr class="hover:bg-gray-50">
-                <td class="px-6 py-4 text-sm font-medium">FAC-001</td>
-                <td class="px-6 py-4 text-sm text-gray-600">Alice Martin</td>
-                <td class="px-6 py-4 text-sm text-gray-600">1 440,00 &euro;</td>
-                <td class="px-6 py-4 text-sm text-gray-600">01/03/2024</td>
-                <td class="px-6 py-4">
-                  <span
-                    class="px-3 py-1 text-xs font-medium rounded-full bg-green-100 text-green-700"
-                    >Payée</span
-                  >
-                </td>
-              </tr>
-              <tr class="hover:bg-gray-50">
-                <td class="px-6 py-4 text-sm font-medium">FAC-002</td>
-                <td class="px-6 py-4 text-sm text-gray-600">Marc Dupont</td>
-                <td class="px-6 py-4 text-sm text-gray-600">1 020,00 &euro;</td>
-                <td class="px-6 py-4 text-sm text-gray-600">15/03/2024</td>
-                <td class="px-6 py-4">
-                  <span
-                    class="px-3 py-1 text-xs font-medium rounded-full bg-yellow-100 text-yellow-700"
-                    >En attente</span
-                  >
-                </td>
-              </tr>
-              <tr class="hover:bg-gray-50">
-                <td class="px-6 py-4 text-sm font-medium">FAC-003</td>
-                <td class="px-6 py-4 text-sm text-gray-600">Sophie Bernard</td>
-                <td class="px-6 py-4 text-sm text-gray-600">480,00 &euro;</td>
-                <td class="px-6 py-4 text-sm text-gray-600">01/04/2024</td>
-                <td class="px-6 py-4">
-                  <span
-                    class="px-3 py-1 text-xs font-medium rounded-full bg-red-100 text-red-700"
-                    >En retard</span
-                  >
-                </td>
-              </tr>
-              <tr class="hover:bg-gray-50">
-                <td class="px-6 py-4 text-sm font-medium">FAC-004</td>
-                <td class="px-6 py-4 text-sm text-gray-600">Alice Martin</td>
-                <td class="px-6 py-4 text-sm text-gray-600">2 880,00 &euro;</td>
-                <td class="px-6 py-4 text-sm text-gray-600">10/04/2024</td>
-                <td class="px-6 py-4">
-                  <span
-                    class="px-3 py-1 text-xs font-medium rounded-full bg-green-100 text-green-700"
-                    >Payée</span
-                  >
-                </td>
-              </tr>
-              <tr class="hover:bg-gray-50">
-                <td class="px-6 py-4 text-sm font-medium">FAC-005</td>
-                <td class="px-6 py-4 text-sm text-gray-600">Thomas Lefebvre</td>
-                <td class="px-6 py-4 text-sm text-gray-600">720,00 &euro;</td>
-                <td class="px-6 py-4 text-sm text-gray-600">20/04/2024</td>
-                <td class="px-6 py-4">
-                  <span
-                    class="px-3 py-1 text-xs font-medium rounded-full bg-yellow-100 text-yellow-700"
-                    >En attente</span
-                  >
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="border-b border-gray-100 text-xs text-gray-400 uppercase tracking-wider">
+                  <th class="text-left px-6 py-3 font-semibold">N° Facture</th>
+                  <th class="text-left px-6 py-3 font-semibold">Client</th>
+                  <th class="text-left px-6 py-3 font-semibold">Montant TTC</th>
+                  <th class="text-left px-6 py-3 font-semibold">Date</th>
+                  <th class="text-left px-6 py-3 font-semibold">Statut</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                  <td class="px-6 py-4 font-medium text-gray-800">FAC-001</td>
+                  <td class="px-6 py-4 text-gray-600">Alice Martin</td>
+                  <td class="px-6 py-4 text-gray-700">1 440,00 €</td>
+                  <td class="px-6 py-4 text-gray-500">01/03/2024</td>
+                  <td class="px-6 py-4"><span class="px-2.5 py-1 rounded-full text-xs font-medium bg-green-100 text-green-700">Payée</span></td>
+                </tr>
+                <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                  <td class="px-6 py-4 font-medium text-gray-800">FAC-002</td>
+                  <td class="px-6 py-4 text-gray-600">Marc Dupont</td>
+                  <td class="px-6 py-4 text-gray-700">1 020,00 €</td>
+                  <td class="px-6 py-4 text-gray-500">15/03/2024</td>
+                  <td class="px-6 py-4"><span class="px-2.5 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-700">En attente</span></td>
+                </tr>
+                <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                  <td class="px-6 py-4 font-medium text-gray-800">FAC-003</td>
+                  <td class="px-6 py-4 text-gray-600">Sophie Bernard</td>
+                  <td class="px-6 py-4 text-gray-700">480,00 €</td>
+                  <td class="px-6 py-4 text-gray-500">01/04/2024</td>
+                  <td class="px-6 py-4"><span class="px-2.5 py-1 rounded-full text-xs font-medium bg-red-100 text-red-700">En retard</span></td>
+                </tr>
+                <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                  <td class="px-6 py-4 font-medium text-gray-800">FAC-004</td>
+                  <td class="px-6 py-4 text-gray-600">Alice Martin</td>
+                  <td class="px-6 py-4 text-gray-700">2 880,00 €</td>
+                  <td class="px-6 py-4 text-gray-500">10/04/2024</td>
+                  <td class="px-6 py-4"><span class="px-2.5 py-1 rounded-full text-xs font-medium bg-green-100 text-green-700">Payée</span></td>
+                </tr>
+                <tr class="hover:bg-gray-50 transition-colors">
+                  <td class="px-6 py-4 font-medium text-gray-800">FAC-005</td>
+                  <td class="px-6 py-4 text-gray-600">Thomas Lefebvre</td>
+                  <td class="px-6 py-4 text-gray-700">720,00 €</td>
+                  <td class="px-6 py-4 text-gray-500">20/04/2024</td>
+                  <td class="px-6 py-4"><span class="px-2.5 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-700">En attente</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
+
       </main>
     </div>
+
+    <script>
+      function openSidebar() {
+        document.getElementById('sidebar').classList.remove('-translate-x-full');
+        document.getElementById('overlay').classList.remove('hidden');
+      }
+      function closeSidebar() {
+        document.getElementById('sidebar').classList.add('-translate-x-full');
+        document.getElementById('overlay').classList.add('hidden');
+      }
+    </script>
   </body>
 </html>

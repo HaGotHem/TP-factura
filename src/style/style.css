@@ -1,7 +1,16 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
+
+
 @font-face {
   font-family: inter;
   src: url("../assets/fonts/inter-font.ttf");
+}
+
+/* Override primary to the brand purple across themes */
+[data-theme="light"],
+[data-theme="night"] {
+  --color-primary: oklch(55% 0.27 272);
+  --color-primary-content: oklch(100% 0 0);
 }
