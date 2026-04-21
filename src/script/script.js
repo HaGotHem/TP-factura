@@ -23,6 +23,7 @@ submitBtn.addEventListener('click', (e) => {
         } else {
             localStorage.removeItem('rememberedUser');
         }
+        sessionStorage.setItem('loggedUser', match.id);
         window.location.href = './src/pages/dashboard.html';
     } else {
         passwordInput.classList.add('invalid');
