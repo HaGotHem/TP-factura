@@ -6,17 +6,19 @@
     <link rel="stylesheet" href="/src/style/style.css" />
     <title>Factura — Connexion</title>
   </head>
-  <body class="font-[inter] bg-[#f1f5f9] h-screen flex flex-col items-center justify-center">
-    <div class="container flex flex-col  justify-center items-center border-1 border-gray-100 shadow-xl bg-white rounded-xl p-6 max-w-fit max-h-fit">
-      <div class="header flex flex-col items-center gap-5">
-        <div class="logo-container flex items-center flex-col gap-2">
-          <div class="logo-container bg-[#4f46e5] rounded-2xl">
-            <p class="text-white font-bold text-2xl px-6 py-3">F</p>
-          </div>
-          <H1 class="text-2xl font-bold ">
-            Factura
-          </H1>
-          <div class="sub text-gray-500 mt-[-10px]">Connectez-vous à votre espace</div>
+  <body>
+
+    <div
+      class="min-h-screen bg-[#eef0f6] flex flex-col items-center justify-center font-[inter]"
+    >
+      <div
+        class="bg-white rounded-2xl shadow-sm border border-slate-200 px-10 py-12 w-full max-w-md flex flex-col items-center"
+      >
+        <!-- Logo -->
+        <div
+          class="bg-[#5b4cff] text-white font-bold text-2xl w-12 h-12 flex items-center justify-center rounded-xl mb-4"
+        >
+          F
         </div>
         
         <form class="form-container ">
@@ -41,10 +43,57 @@
         <button class="btn btn-primary min-w-full mt-5" id="submitBtn">Se connecter</button>
       </div>
     </div>
-    <div class="ids-container">
-      <p class="text-gray-400 text-xs mt-5">Identifiants: admin / admin123 alice / alice456</p>
-    </div>
-    </div>
-    <script src="/src/script/script.js"></script>
+=======
+
+
+
+    <div class="min-h-screen bg-slate-100 flex items-center justify-center">
+      <div class="bg-white rounded-2xl border border-slate-200 p-8">
+        <p class="text-xl font-semibold text-slate-900 font-inter">
+          </div>
+
+
+          <form>
+          <label for="username">Identifiant:</label>
+          </form>
+
+          <form>
+          <label for="password">Mot de passe:</label>
+        </form>
+          <input type="text" id="username" name="username" class="input" placeholder="Identifiant">
+      
+          <input type="password" id="password" name="password" class="input" placeholder="Mot de passe">
+        </div>
+        </div>
+        </p>
+
+
+
+
+
+
+
+
+
+
+
+      <a href="./src/pages/dashboard.html"> <button class="button">Se Connecter</button></a>
+    </div> 
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- >>>>>>> Stashed changes -->
   </body>
 </html>

@@ -4,8 +4,29 @@
 
 
 @font-face {
-  font-family: inter;
-  src: url("../assets/fonts/inter-font.ttf");
+    font-family: inter;
+    src: url("../assets/fonts/inter-font.ttf");
+}
+
+.connection {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    input {
+        padding: 10px;
+        border: 1px solid black;
+        border-radius: 20px;
+    }
+}
+
+
+.button {   
+    background-color: #4f46e5;  
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10%;
+    cursor: pointer;
 }
 
 /* Override primary to the brand purple across themes */
